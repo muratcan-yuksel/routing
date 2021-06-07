@@ -9,9 +9,15 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 const App = () => {
   return (
     <>
-      <Nav />
-      <About />
-      <Shop />
+      {/* everything that's in between of this Router will have the ability to do routing */}
+      <Router>
+        <Nav />
+        {/* this switch functions as the exact path */}
+        <Switch>
+          <Route path="/about" exact component={About} />
+          <Route path="/shop" exact component={Shop} />
+        </Switch>
+      </Router>
     </>
   );
 };
